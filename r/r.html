@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>r</title>
+    <meta charset="UTF-8" />
+    <style>
+      #myVideo {
+        visibility: hidden;
+      }
+
+      .content {
+        text-align: center;
+      }
+
+      #click-me {
+        background-color: red; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        -webkit-transition-duration: 0.6s; /* Safari */
+        transition-duration: 0.6s;
+        border-radius: 250px;
+
+        background-color: red; /* Green */
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        font-weight: bold;
+
+        background-color: red; 
+        color: White; 
+        border: none;
+      }
+
+      #click-me:hover, #click-me:focus {
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+        background-color: white;
+        color: black;
+        border: 3px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <video width="560" height="315" id="myVideo" loop>
+        <source src="video.mp4" type="video/mp4">
+        Sadge, ur browser no support video HTML tag.
+      </video>
+      <br>
+      <p id="text"><i>The button is telling you not to click it, so don't click it.</i></p>
+      <button id="click-me" onclick="playVideo()">&nbsp;&nbsp;&nbsp;⚠️Don't click me⚠️&nbsp;&nbsp;&nbsp;</button>
+    </div>
+    <script>
+      document.getElementById("click-me").addEventListener("mouseover", mouseOver);
+      document.getElementById("click-me").addEventListener("mouseout", mouseOut);
+
+      function mouseOver() {
+        document.getElementById("text").innerHTML = "<i>The button is telling you not to click it, but you are deciding to anyways.</i>";
+      }
+
+      function mouseOut() {
+        document.getElementById("text").innerHTML = "<i>The button is telling you not to click it, so don't click it.</i>"
+      }
+
+      function playVideo() {
+        var button = document.getElementById("click-me").style.visibility = "hidden";
+        var vid2 = document.getElementById("myVideo").style.visibility = "visible";
+        var vid3 = document.getElementById("myVideo").play();
+        const Interval = setInterval(function() {document.getElementById("text").innerHTML = "<i>The button told you not to click it, but you decided to anyways.</i>";}, 0500);
+        setTimeout(function() {clearInterval(Interval);}, 5000);
+      }
+    </script>
+  </body>
+</html>
