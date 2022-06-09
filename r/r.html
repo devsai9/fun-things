@@ -59,6 +59,7 @@
         <source src="video.mp4" type="video/mp4">
         Sadge, ur browser no support video HTML tag.
       </video>
+      <p id="disclaimer">Disclaimer: This song, <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Never Gonna Give You Up</a>, is a copyrighted song. Copyrighted by Rick Astley. Original Source: <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">https://www.youtube.com/watch?v=dQw4w9WgXcQ</a>
       <br>
       <p id="text"><i>The button is telling you not to click it, so don't click it.</i></p>
       <button id="click-me" onclick="playVideo()">&nbsp;&nbsp;&nbsp;⚠️Don't click me⚠️&nbsp;&nbsp;&nbsp;</button>
@@ -77,6 +78,7 @@
 
       function playVideo() {
         var button = document.getElementById("click-me").style.visibility = "hidden";
+        var disclaimer = document.getElementById("disclaimer").style.visibility = "visible";
         var vid2 = document.getElementById("myVideo").style.visibility = "visible";
         var vid3 = document.getElementById("myVideo").play();
         const Interval = setInterval(function() {document.getElementById("text").innerHTML = "<i>The button told you not to click it, but you decided to anyways.</i>";}, 0500);
